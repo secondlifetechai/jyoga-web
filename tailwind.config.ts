@@ -6,13 +6,23 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
-      fontFamily: {
-        sans: "Switzer, system-ui, sans-serif",
+      colors: {
+        primary: "#fe9808",
+        secondary: {
+          100: "#E2E2D5",
+          200: "#888883",
+        },
+        dark: "#111111",
       },
-      borderRadius: {
-        "4xl": "2rem",
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "3rem",
+        },
       },
     },
   },

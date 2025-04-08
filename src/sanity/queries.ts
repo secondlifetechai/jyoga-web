@@ -190,11 +190,44 @@ export const getServiceTypes = async () => {
 const YOGA_QUERY = defineQuery(`*[_type=='yogaTypes']|order(name asc){
   name,
   description,
+  photo,
   "slug":slug.current
 }`);
 
 export const getYogaTypes = async () => {
   return await clientFetch({
     query: YOGA_QUERY,
+  });
+};
+
+const ONLINE_SERVICES_QUERY = defineQuery(`*[_type=='services' && serviceType=='Online']|order(name asc){
+  name,
+  price,
+  description,
+  duration,
+  serviceType,
+  eventType,
+  "slug":slug.current
+}`);
+
+export const getOnlineServices = async () => {
+  return await clientFetch({
+    query: ONLINE_SERVICES_QUERY,
+  });
+};
+
+const ONSITE_SERVICES_QUERY = defineQuery(`*[_type=='services' && serviceType=='Onsite']|order(name asc){
+  name,
+  price,
+  description,
+  duration,
+  serviceType,
+  eventType,
+  "slug":slug.current
+}`);
+
+export const getOnsiteServices = async () => {
+  return await clientFetch({
+    query: ONSITE_SERVICES_QUERY,
   });
 };
